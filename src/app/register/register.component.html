@@ -1,0 +1,44 @@
+<div class="container">
+    <div style="height: 100vh;" class="row align-items-center">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+            <form (ngSubmit)="register()" [formGroup]="registerForm" class="shadow border rounded p-5 mt-5">
+                <div class="mb-5 text-center">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Cookpedia</h3>
+                </div>
+                <div class="mb-4">
+                    <input name="username" formControlName="username" class="form-control" type="text" placeholder="Username">
+                </div>
+               @if(registerForm.get("username")?.errors && registerForm.get("username")?.touched){
+                <div class="text-danger">Invalid Username</div>
+               }
+                <div class="mb-4">
+                    <input name="email" formControlName="email"class="form-control" type="text" placeholder="E Mail">
+                </div>
+                @if(registerForm.get("email")?.errors && registerForm.get("email")?.touched){
+                    <div class="text-danger">Invalid email</div>
+                   }
+                <div class="mb-5">
+                    <input name="password" formControlName="password"class="form-control" type="password" placeholder="Password">
+                </div>
+                @if(registerForm.get("password")?.errors && registerForm.get("password")?.touched){
+                    <div class="text-danger">Invalid password</div>
+                   }
+                <div class="d-grid">
+                    <button type="submit"  class="btn btn-success">Register</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+            <h1>Create new Account</h1>
+            <h5>What you will get?</h5>
+            <ul class="mt-5">
+                <li>Different Recipes</li>
+                <li>Easy way to make Recipe</li>
+                <li>Save your favourite Recipes</li>
+                <li>Download your favourite Recipes</li>
+            </ul>
+        </div>
+    </div>
+</div>
